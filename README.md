@@ -13,6 +13,9 @@ Change out xml info in Activity and Adapter
 
 Clear out non-boilerplat code
 
+update package
+update imports
+
 (Mayby I should add one more folder with all of the non-boilerplate code cleared out)
 
 
@@ -26,6 +29,9 @@ Rename everything that has RecyclerViewCursorList to YourActivityName.
 Change out xml info in Activity and Adapter
 
 Clear out non-boilerplat code
+
+update package
+update imports
 
 (I really should add another folder with all of the non-boilerplate code cleared out)
 
@@ -42,5 +48,9 @@ The ViewModel will reference the Repository (Model part of MVVM) and let model h
 When the repository/model updates  the viewmodel, the activity is updated through is observer.
 
 The adapter has an interface to the activity.  This eliminates having a reference to the Activity and eliminates memory leaks from forgetting to eliminate the Activity reference in the adapter. (if you want to pass in the activity... just remember to null the reference to the activity in the adapter in onDestroy of the activity.)
+
+
+##PS
+I removed some of the non-boilerplate code and put it in boilerplate_....
 
 

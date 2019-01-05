@@ -23,16 +23,15 @@ class RecyclerViewCursorListAdapter(private val thisInterface: RecyclerCursorLis
         holder.v.item_num_text.text = cursor.getString(cursor.getColumnIndex("_id"))
         holder.v.item_text.text = cursor.getString(cursor.getColumnIndex("name"))
 
-        if (cursor.isFirst) {
-            holder.v.item_holder.setOnClickListener {
+        when {
+            cursor.isFirst -> holder.v.item_holder.setOnClickListener {
                 thisInterface.resetItems()
             }
-        } else if (cursor.position < cursor.count - 1) {
-            holder.v.item_holder.setOnClickListener {  }
-        } else { //last item
-            holder.v.item_holder.setOnClickListener {
-                thisInterface.getMoreItems(cursor.count + 25)
-            }
+            cursor.position < cursor.count - 1 -> holder.v.item_holder.setOnClickListener {  }
+            else -> //last item
+                holder.v.item_holder.setOnClickListener {
+                    thisInterface.getMoreItems(cursor.count + 25)
+                }
         }
 
 
