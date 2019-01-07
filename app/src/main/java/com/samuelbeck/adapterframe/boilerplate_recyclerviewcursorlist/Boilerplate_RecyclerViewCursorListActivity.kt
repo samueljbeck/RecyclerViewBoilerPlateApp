@@ -1,3 +1,4 @@
+//TODO: update package name
 package com.samuelbeck.adapterframe.boilerplate_recyclerviewcursorlist
 
 import android.app.Activity
@@ -7,8 +8,9 @@ import android.database.Cursor
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import com.samuelbeck.adapterframe.GlobalState
 import com.samuelbeck.adapterframe.R
+
+//TODO: Change name of AdapterInterface
 import com.samuelbeck.adapterframe.boilerplate_recyclerviewcursorlist.Boilerplate_RecyclerViewCursorListAdapter.RecyclerCursorListAdapterInterface
 import kotlinx.android.synthetic.main.recycler_view_activity.*
 
@@ -24,28 +26,33 @@ import kotlinx.android.synthetic.main.recycler_view_activity.*
  *
  */
 
+//TODO: update class name
 class Boilerplate_RecyclerViewCursorListActivity: AppCompatActivity() {
 
+    //TODO: Change name of adapter
     private lateinit var adapter: Boilerplate_RecyclerViewCursorListAdapter
     lateinit var layoutManager: LinearLayoutManager
+    //TODO: Change name of ViewModel
     lateinit var viewModel: Boilerplate_RecyclerViewCursorListViewModel
     lateinit var thisActivity: Activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //TODO: Change activity layout
         setContentView(R.layout.recycler_view_activity)
         thisActivity = this
 
 
         layoutManager = LinearLayoutManager(this)
+        //TODO: Change name of adapter
         adapter = Boilerplate_RecyclerViewCursorListAdapter(adapterInterface, null)
 
         recycler_view.layoutManager = layoutManager
         recycler_view.adapter = adapter
 
+        //TODO: change name of ViewModel
         viewModel = ViewModelProviders.of(this).get(Boilerplate_RecyclerViewCursorListViewModel::class.java)
-
-        viewModel.getExampleData(25, (thisActivity.applicationContext as GlobalState).dbmgr.dataBase).observe(this, Observer { cursor ->
+        viewModel.getExampleData().observe(this, Observer { cursor ->
             updateAdapter(cursor)
         })
 
@@ -59,7 +66,13 @@ class Boilerplate_RecyclerViewCursorListActivity: AppCompatActivity() {
         }
     }
 
+    //TODO: Change name of adapter interface
     private val adapterInterface = object: RecyclerCursorListAdapterInterface {
+        override fun thisActivity(): Activity {
+            return thisActivity
+        }
+
+        //TODO: replace these classes
         override fun resetItems() {
             viewModel.resetItems()
         }
@@ -67,11 +80,5 @@ class Boilerplate_RecyclerViewCursorListActivity: AppCompatActivity() {
         override fun getMoreItems(count: Int) {
             viewModel.getMoreData(count)
         }
-
-        override fun thisActivity(): Activity {
-            return thisActivity
-        }
-
     }
-
 }

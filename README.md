@@ -4,7 +4,7 @@ This is boilerplate code for RecyclerView.
 I created this app because I use the same boilerplate code over and over again when creating a list activity.  
 
 
-##For a RecyclerView using an ArrayList:
+## For a RecyclerView using an ArrayList:
 Copy the contents of the folder recyclerviewarraylist (app/src/main/java/com.samuelbeck.adapterfram/recyclerviewarraylist) into the folder you are going to user for your recyclerview.  The layout folders has the sample xml.  
 
 Rename everything that has RecyclerViewArrayList to YourActivityName. 
@@ -20,7 +20,7 @@ update imports
 
 
 
-##For a RecylcerView using a Cursor
+## For a RecylcerView using a Cursor
 Copy the contents of the folder recyclerviewcursorlist (app/src/main/java/com.samuelbeck.adapterfram/recyclerviewcursorlist). The layout folders has the sample xml.
 
 
@@ -37,7 +37,7 @@ update imports
 
 
  
-##Explanation
+## Explanation
 
 The activity holds an observer for the viewmodel that implements livedata
 
@@ -50,7 +50,7 @@ When the repository/model updates  the viewmodel, the activity is updated throug
 The adapter has an interface to the activity.  This eliminates having a reference to the Activity and eliminates memory leaks from forgetting to eliminate the Activity reference in the adapter. (if you want to pass in the activity... just remember to null the reference to the activity in the adapter in onDestroy of the activity.)
 
 
-##PS
+## PS
 I removed some of the non-boilerplate code and put it in boilerplate_....
 
 

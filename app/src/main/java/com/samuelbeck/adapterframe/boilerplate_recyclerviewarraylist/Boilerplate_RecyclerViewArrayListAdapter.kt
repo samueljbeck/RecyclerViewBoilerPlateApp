@@ -1,3 +1,4 @@
+//TODO: update package name
 package com.samuelbeck.adapterframe.recyclerviewarraylist
 
 import android.app.Activity
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.recycler_view_item.view.*
  *
  */
 
-
+//TODO: update class name
 class Boilerplate_RecyclerViewArrayListAdapter(var thisInterface: RecyclerArrayListAdapterInterface, var items: ArrayList<String>): RecyclerView.Adapter<Boilerplate_RecyclerViewArrayListAdapter.ViewHolder>() {
 
 
@@ -24,6 +25,7 @@ class Boilerplate_RecyclerViewArrayListAdapter(var thisInterface: RecyclerArrayL
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        //TODO: replace item xml
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false))
     }
 
@@ -37,6 +39,8 @@ class Boilerplate_RecyclerViewArrayListAdapter(var thisInterface: RecyclerArrayL
 
     interface RecyclerArrayListAdapterInterface {
         fun thisActivity(): Activity
+
+        //TODO: replace these functions
         fun getMoreItems(count: Int)
         fun resetItems()
     }

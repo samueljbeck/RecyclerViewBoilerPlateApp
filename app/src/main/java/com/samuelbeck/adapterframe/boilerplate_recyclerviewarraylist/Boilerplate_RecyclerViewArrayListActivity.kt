@@ -21,25 +21,32 @@ import kotlinx.android.synthetic.main.recycler_view_activity.*
  */
 
 
+//TODO: update class name
 class Boilerplate_RecyclerViewArrayListActivity: AppCompatActivity() {
 
+    //TODO: Change name of adapter
     private lateinit var adapter: Boilerplate_RecyclerViewArrayListAdapter
     lateinit var layoutManager: LinearLayoutManager
+    //TODO: Change name of ViewModel
     lateinit var viewModel: Boilerplate_RecyclerViewArrayListViewModel
     lateinit var thisActivity: Activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //TODO: Change activity layout
         setContentView(R.layout.recycler_view_activity)
         thisActivity = this
 
 
         layoutManager = LinearLayoutManager(this)
+        //TODO: Change name of adapter
         adapter = Boilerplate_RecyclerViewArrayListAdapter(adapterInterface, ArrayList())
 
         recycler_view.layoutManager = layoutManager
         recycler_view.adapter = adapter
 
+
+        //TODO: change name of ViewModel
         viewModel = ViewModelProviders.of(this).get(Boilerplate_RecyclerViewArrayListViewModel::class.java)
         viewModel.getExampleData(25).observe(this, Observer { listData ->
             updateAdapter(listData!!)
@@ -54,6 +61,12 @@ class Boilerplate_RecyclerViewArrayListActivity: AppCompatActivity() {
 
 
     private val adapterInterface = object: Boilerplate_RecyclerViewArrayListAdapter.RecyclerArrayListAdapterInterface {
+        override fun thisActivity(): Activity {
+            return thisActivity
+        }
+
+
+        //TODO: replace these functions
         override fun resetItems() {
             viewModel.resetItems()
         }
@@ -62,9 +75,7 @@ class Boilerplate_RecyclerViewArrayListActivity: AppCompatActivity() {
             viewModel.getMoreData(count)
         }
 
-        override fun thisActivity(): Activity {
-            return thisActivity
-        }
+
 
     }
 
