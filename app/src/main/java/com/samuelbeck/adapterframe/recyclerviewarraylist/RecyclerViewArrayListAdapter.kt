@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.recycler_view_item.view.*
 
 class RecyclerViewArrayListAdapter(var thisInterface: RecyclerArrayListAdapterInterface, var items: ArrayList<ExampleData>): RecyclerView.Adapter<RecyclerViewArrayListAdapter.ViewHolder>() {
 
+    inner class ViewHolder(val v: View) : RecyclerView.ViewHolder(v)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
@@ -39,10 +40,6 @@ class RecyclerViewArrayListAdapter(var thisInterface: RecyclerArrayListAdapterIn
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false))
-    }
-
-    class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-        val v = view
     }
 
     override fun getItemCount(): Int {

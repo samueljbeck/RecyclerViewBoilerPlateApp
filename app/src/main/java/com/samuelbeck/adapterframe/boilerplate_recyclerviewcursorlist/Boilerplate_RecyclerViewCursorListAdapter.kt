@@ -19,14 +19,13 @@ import com.samuelbeck.adapterframe.util.CursorRecyclerAdapter
 //TODO: update class name
 class Boilerplate_RecyclerViewCursorListAdapter(private val thisInterface: RecyclerCursorListAdapterInterface, cursor: Cursor?): CursorRecyclerAdapter<Boilerplate_RecyclerViewCursorListAdapter.ViewHolder>(cursor) {
 
-    inner class ViewHolder(private val v: View) : RecyclerView.ViewHolder(v)
+    inner class ViewHolder(val v: View) : RecyclerView.ViewHolder(v)
 
     override fun onBindViewHolderCursor(holder: ViewHolder, cursor: Cursor) {
 
         //holder.v.item_num_text.text = cursor.getString(cursor.getColumnIndex("_id"))
 
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Boilerplate_RecyclerViewCursorListAdapter.ViewHolder {
         //TODO: replace item xml
