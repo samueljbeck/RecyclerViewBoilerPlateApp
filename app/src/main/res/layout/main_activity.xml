@@ -6,12 +6,12 @@
 
 
     <TextView
-            android:text="RecyclerView ArrayList"
+            android:text="@string/recyclerview_arraylist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/array_list_text" android:textSize="20sp"
             android:layout_margin="16dp"/>
     <TextView
-            android:text="RecyclerView Cursor List"
+            android:text="@string/recyclerview_cursor_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/cursor_list_text" android:textSize="20sp"
             android:layout_margin="16dp"/>

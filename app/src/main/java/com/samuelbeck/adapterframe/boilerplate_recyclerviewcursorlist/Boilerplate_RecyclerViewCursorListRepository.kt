@@ -3,9 +3,7 @@ package com.samuelbeck.adapterframe.boilerplate_recyclerviewcursorlist
 
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.util.Log
 import com.samuelbeck.adapterframe.DbUtils
-import com.samuelbeck.adapterframe.recyclerviewarraylist.ExampleData
 
 /*
  * Created by samueljbeck on 1/4/19.
@@ -21,9 +19,8 @@ class Boilerplate_RecyclerViewCursorListRepository(private val dataBase: SQLiteD
         val selectQuery = "SELECT * " +
                 " FROM example_data " +
                 " ORDER BY _id "
-        var cursor = DbUtils.runSelectQuery(selectQuery, dataBase)
 
-        return cursor
+        return DbUtils.runSelectQuery(selectQuery, dataBase)
     }
 
 

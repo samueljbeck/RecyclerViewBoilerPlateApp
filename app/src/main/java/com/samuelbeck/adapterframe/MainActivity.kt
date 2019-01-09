@@ -24,7 +24,5 @@ class MainActivity: Activity() {
         cursor_list_text.setOnClickListener {
             startActivity(Intent(this, RecyclerViewCursorListActivity::class.java))
         }
-
     }
-
 }

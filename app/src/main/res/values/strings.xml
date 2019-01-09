@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AdapterFrame</string>
+    <string name="recyclerview_arraylist">RecyclerView ArrayList</string>
+    <string name="recyclerview_cursor_list">RecyclerView Cursor List</string>
 </resources>
